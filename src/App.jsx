@@ -114,7 +114,7 @@ function Home() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/rejinaraidomain">
       <div className="min-h-screen bg-gray-50 flex flex-col">
         {/* Header */}
         <header className="bg-white shadow-md py-6 px-4 flex flex-col items-center">
