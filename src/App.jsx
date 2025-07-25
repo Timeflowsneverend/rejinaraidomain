@@ -1,8 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import img1 from "./assets/IMG_8435 - Copy.jpg";
-import img2 from "./assets/IMG_8436 - Copy.jpg";
-import img3 from "./assets/IMG_8449 - Copy.jpg";
+import img1 from "./assets/WhatsApp Image 2025-07-25 at 7.36.39 PM (1).jpeg";
+import img2 from "./assets/WhatsApp Image 2025-07-25 at 7.36.39 PM.jpeg";
+import img3 from "./assets/WhatsApp Image 2025-07-25 at 7.36.38 PM (2).jpeg";
+import img4 from "./assets/WhatsApp Image 2025-07-25 at 7.36.38 PM (1).jpeg";
+import img5 from "./assets/WhatsApp Image 2025-07-25 at 7.36.38 PM.jpeg";
+import img6 from "./assets/WhatsApp Image 2025-07-25 at 7.36.37 PM.jpeg";
+import img7 from "./assets/WhatsApp Image 2025-07-25 at 7.35.45 PM (3).jpeg";
+import img8 from "./assets/WhatsApp Image 2025-07-25 at 7.35.45 PM (2).jpeg";
+import img9 from "./assets/WhatsApp Image 2025-07-25 at 7.35.45 PM (1).jpeg";
+import img10 from "./assets/WhatsApp Image 2025-07-25 at 7.35.45 PM.jpeg";
+import img11 from "./assets/WhatsApp Image 2025-07-25 at 7.35.44 PM (2).jpeg";
+import img12 from "./assets/WhatsApp Image 2025-07-25 at 7.35.44 PM (1).jpeg";
+import img13 from "./assets/WhatsApp Image 2025-07-25 at 7.35.44 PM.jpeg";
+import img14 from "./assets/WhatsApp Image 2025-07-25 at 7.35.43 PM (1).jpeg";
+import img15 from "./assets/WhatsApp Image 2025-07-25 at 7.35.43 PM.jpeg";
 
 function Divider() {
   return (
@@ -17,46 +29,73 @@ function Hero() {
   return (
     <section className="text-center py-12 px-4 bg-gradient-to-r from-yellow-100 to-gray-50 fade-in">
       <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-3">
-        Handcrafted Bokeys
+        Handcrafted Bouquets
       </h2>
       <p className="text-gray-600 max-w-xl mx-auto text-lg">
-        Step into a world of gentle colors and soft textures. Each bokey is
+        Step into a world of gentle colors and soft textures. Each bouquet is
         crafted with care to bring a touch of warmth and whimsy to your day.
-        Discover something special, made just for you, at Nana house.
+        Discover something special, made just for you, at Nana House. Let our
+        bouquets brighten your space and lift your spirits.
       </p>
     </section>
   );
 }
 
-function Gallery() {
+function Gallery({ highlightOnly = false }) {
+  // List of all images
+  const images = [
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+    img8,
+    img9,
+    img10,
+    img11,
+    img12,
+    img13,
+    img14,
+    img15,
+  ];
+  // Shuffle and pick 3 random images for highlight
+  const getRandomImages = (arr, n) => {
+    const shuffled = arr.slice().sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, n);
+  };
+  const displayImages = highlightOnly ? getRandomImages(images, 3) : images;
+
   return (
     <section id="gallery" className="py-12 px-4 bg-white fade-in">
       <h2 className="text-2xl font-semibold text-center text-gray-800 mb-8">
-        Our Bokeys
+        {highlightOnly ? "Our Bouquets" : "All Bouquets"}
       </h2>
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto">
-        <div className="bg-yellow-50 rounded-xl shadow-lg p-3 flex items-center justify-center transition-transform hover:scale-105">
-          <img
-            src={img1}
-            alt="Colorful handcrafted bokey 1"
-            className="rounded-lg object-cover w-full h-72 border border-yellow-200 shadow-md"
-          />
-        </div>
-        <div className="bg-yellow-50 rounded-xl shadow-lg p-3 flex items-center justify-center transition-transform hover:scale-105">
-          <img
-            src={img2}
-            alt="Colorful handcrafted bokey 2"
-            className="rounded-lg object-cover w-full h-72 border border-yellow-200 shadow-md"
-          />
-        </div>
-        <div className="bg-yellow-50 rounded-xl shadow-lg p-3 flex items-center justify-center transition-transform hover:scale-105">
-          <img
-            src={img3}
-            alt="Colorful handcrafted bokey 3"
-            className="rounded-lg object-cover w-full h-72 border border-yellow-200 shadow-md"
-          />
-        </div>
+        {displayImages.map((img, idx) => (
+          <div
+            key={idx}
+            className="bg-yellow-50 rounded-xl shadow-lg p-3 flex items-center justify-center transition-transform hover:scale-105"
+          >
+            <img
+              src={img}
+              alt={`Colorful handcrafted bouquet ${idx + 1}`}
+              className="rounded-lg object-cover w-full h-72 border border-yellow-200 shadow-md"
+            />
+          </div>
+        ))}
       </div>
+      {highlightOnly && (
+        <div className="flex justify-center mt-8">
+          <Link
+            to="/gallery"
+            className="px-6 py-2 bg-orange-400 text-white rounded-lg shadow hover:bg-orange-500 transition-colors font-semibold"
+          >
+            See More
+          </Link>
+        </div>
+      )}
     </section>
   );
 }
@@ -105,7 +144,7 @@ function Home() {
     <>
       <Hero />
       <Divider />
-      <Gallery />
+      <Gallery highlightOnly={true} />
       <Divider />
       <Contact />
     </>
@@ -122,7 +161,7 @@ function App() {
             Nana house
           </h1>
           <span className="text-base text-gray-500 mb-3">
-            Gentle handcrafted bokeys for every moment
+            Gentle handcrafted bouquets for every moment
           </span>
           <nav className="flex gap-6 text-lg font-medium text-gray-700">
             <NavLink to="/" label="Home" />
