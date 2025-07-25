@@ -1,12 +1,91 @@
-# React + Vite
+# Nana House Bouquets Gallery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive React web app for showcasing handcrafted bouquets, built with Vite, React, React Router, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Gallery**: Browse a collection of beautiful bouquet images.
+- **Highlight Section**: See a few randomly highlighted bouquets on the homepage.
+- **Full Gallery**: Click "See More" to view all available bouquet photos.
+- **Responsive Design**: Looks great on mobile and desktop.
+- **Contact Section**: Social media links for Nana House.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or newer recommended)
+- [pnpm](https://pnpm.io/) (or use npm/yarn, but scripts use pnpm by default)
+
+### Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone <your-repo-url>
+   cd rejinaraidomain
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pnpm install
+   ```
+
+### Development
+
+To start the development server with hot reloading:
+
+```bash
+pnpm run dev
+```
+
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Build
+
+To create a production build:
+
+```bash
+pnpm run build
+```
+
+### Preview Production Build
+
+To preview the production build locally:
+
+```bash
+pnpm run preview
+```
+
+### Linting
+
+To check for code style issues:
+
+```bash
+pnpm run lint
+```
+
+## Project Structure
+
+```
+src/
+  App.jsx         # Main app and routes
+  assets/         # Bouquet images and static assets
+  index.css       # Tailwind and global styles
+  main.jsx        # App entry point
+public/
+  ...             # Static files
+```
+
+## Customization
+
+- To update bouquet images, add or replace files in `src/assets/` (filenames starting with "WhatsApp" are used in the gallery).
+- Update social media links in the `Contact` section of `App.jsx`.
+
+## License
+
+This project is for Nana House. Please contact the owner for reuse or collaboration.
+
+---
+
+_Built with ❤️ using React, Vite, and Tailwind CSS._
