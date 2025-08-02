@@ -105,7 +105,7 @@ function Gallery({
     const shuffled = arr.slice().sort(() => 0.5 - Math.random());
     return shuffled.slice(0, n);
   };
-  const displayImages = highlightOnly ? getRandomImages(images, 3) : images;
+  const displayImages = highlightOnly ? getRandomImages(images, 4) : images;
 
   const handleImageClick = (img) => {
     setModalImage(img);
