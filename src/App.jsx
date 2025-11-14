@@ -42,11 +42,11 @@ function Hero() {
 function BouquetModal({ open, image, onClose }) {
   if (!open) return null;
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+    <div className="fixed inset-0 z-30 flex items-center justify-center bg-black size-full p-4">
       <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 p-4 relative animate-fadeIn">
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-gray-500 hover:text-orange-500 text-2xl font-bold focus:outline-none"
+          className="absolute top-2 right-2 text-orange-600 hover:text-orange-700 text-2xl font-bold focus:outline-none"
           aria-label="Close"
         >
           &times;
@@ -54,7 +54,7 @@ function BouquetModal({ open, image, onClose }) {
         <img
           src={image}
           alt="Bouquet large preview"
-          className="rounded-xl w-full h-72 object-contain mb-4 border border-orange-100 shadow"
+          className="rounded-xl w-full h-fit object-contain mb-4 border border-orange-100 shadow"
         />
         <div className="text-center">
           <h3 className="text-xl font-bold mb-2 gradient-text">
@@ -65,7 +65,7 @@ function BouquetModal({ open, image, onClose }) {
           </p>
           <button
             onClick={onClose}
-            className="mt-2 px-6 py-2 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-lg shadow hover:bg-orange-600 transition-colors font-semibold"
+            className="mt-2 px-6 py-2 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-lg shadow hover:bg-orange-800 transition-colors font-semibold"
           >
             Close
           </button>
@@ -146,7 +146,7 @@ function Gallery({
               <img
                 src={img}
                 alt={`Colorful handcrafted bouquet ${idx + 1}`}
-                className="image-hover rounded-xl object-cover w-full h-64 sm:h-56 md:h-64 lg:h-80 border-2 border-orange-100 shadow-lg"
+                className="image-hover rounded-xl object-cover w-md h-full sm:h-56 md:h-64 lg:h-80 border-2 border-orange-100 shadow-lg"
               />
             </div>
           ))}
@@ -181,6 +181,12 @@ function Contact() {
           bouquets:
         </p>
         <div className="grid gap-4 sm:gap-6 md:gap-8 max-w-md mx-auto">
+              <a
+                href="https://www.tiktok.com/@nana.house7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-700 font-bold text-base sm:text-lg transition-colors"
+              >
           <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
             <div className="flex items-center justify-center gap-3 sm:gap-4">
               <span
@@ -192,17 +198,17 @@ function Contact() {
               </span>
               <div className="text-left">
                 <p className="text-gray-600 text-xs sm:text-sm">Follow us on</p>
-                <a
-                  href="https://www.tiktok.com/@nana.house7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-700 font-bold text-base sm:text-lg transition-colors"
-                >
                   TikTok: @nana.house7
-                </a>
               </div>
             </div>
           </div>
+          </a>
+              <a
+                href="https://www.instagram.com/nanahouse_0919"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-600 hover:text-pink-700 font-bold text-base sm:text-lg transition-colors"
+              >
           <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
             <div className="flex items-center justify-center gap-3 sm:gap-4">
               <span
@@ -214,17 +220,11 @@ function Contact() {
               </span>
               <div className="text-left">
                 <p className="text-gray-600 text-xs sm:text-sm">Follow us on</p>
-                <a
-                  href="https://www.instagram.com/nanahouse_0919"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-pink-600 hover:text-pink-700 font-bold text-base sm:text-lg transition-colors"
-                >
                   Instagram: nanahouse_0919
-                </a>
               </div>
             </div>
           </div>
+                </a>
         </div>
       </div>
     </section>
