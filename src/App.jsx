@@ -42,7 +42,7 @@ function Hero() {
 function BouquetModal({ open, image, onClose }) {
   if (!open) return null;
   return (
-    <div className="fixed inset-0 z-30 flex items-center justify-center bg-black size-full p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black size-full p-4">
       <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 p-4 relative animate-fadeIn">
         <button
           onClick={onClose}
